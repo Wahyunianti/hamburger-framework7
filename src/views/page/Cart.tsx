@@ -1,15 +1,19 @@
-
-import { Navbar, Page, Block } from 'framework7-react';
+import { Navbar, Page, Block, NavTitle, NavTitleLarge } from 'framework7-react';
 
 const Cart = () => {
-    
+
   return (
-    <Page>
-      <Navbar title="Cart" />
-      <Block strong>
-        <p>Cart</p>
+    <>
+      <Block className='mains'>
+        <Navbar className='custom-color' large transparent sliding={false}>
+          <NavTitle sliding>Cart</NavTitle>
+          <NavTitleLarge >Cart</NavTitleLarge>
+        </Navbar>
       </Block>
-    </Page>
+      <Block>
+        <p>Your cart is empty.</p>
+      </Block>
+    </>
   );
 };
 

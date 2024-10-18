@@ -102,3 +102,10 @@ h1, h2, h3, h4, h5 {
 .productt {
     gap: 10px;
 }
+
+/* bottombar */
+.toolbar.tabbar.toolbar-bottom{
+    position: fixed;
+    bottom: 0;
+}
+

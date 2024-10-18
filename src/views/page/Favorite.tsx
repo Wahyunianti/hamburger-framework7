@@ -1,14 +1,20 @@
-import { Navbar, Page, Block } from 'framework7-react';
+import { Navbar, Page, Block, NavTitle, NavTitleLarge } from 'framework7-react';
 
 const Favorite = () => {
-    
+
   return (
-    <Page>
-      <Navbar title="Favorite" />
-      <Block strong>
-        <p>Favorite</p>
+    <>
+      <Block className='mains'>
+        <Navbar className='custom-color' large transparent sliding={false}>
+          <NavTitle sliding>Favorites</NavTitle>
+          <NavTitleLarge >Favorites</NavTitleLarge>
+        </Navbar>
       </Block>
-    </Page>
+      <Block>
+        <p>You don't have any favorites yet</p>
+        <p>When viewing an item, press the favorite icon favorite_border to add it</p>
+      </Block>
+    </>
   );
 };
 
