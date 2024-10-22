@@ -1,10 +1,11 @@
 import Bottombar from "./Bottombar";
 import Sidebar from "./Sidebar";
-import Panelright from "./Panelright";
+import Panels from "./Panels";
+
 
 export {
     Bottombar,
     Sidebar,
-    Panelright
+    Panels
 }
 

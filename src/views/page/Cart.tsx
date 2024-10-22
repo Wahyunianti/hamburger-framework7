@@ -10,7 +10,7 @@ const Cart = () => {
           <NavTitleLarge >Cart</NavTitleLarge>
         </Navbar>
       </Block>
-      <Block>
+      <Block className='mains'>
         <p>Your cart is empty.</p>
       </Block>
     </>

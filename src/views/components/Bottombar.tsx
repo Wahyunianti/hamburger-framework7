@@ -1,6 +1,7 @@
 import { Link, Panel, Toolbar } from "framework7-react";
+import React from 'react';
 
-function Bottombar() {
+const Bottombar: React.FC = () => {
   return (
    
       <Toolbar bottom tabbar>

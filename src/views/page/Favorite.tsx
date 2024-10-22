@@ -10,7 +10,7 @@ const Favorite = () => {
           <NavTitleLarge >Favorites</NavTitleLarge>
         </Navbar>
       </Block>
-      <Block>
+      <Block className='mains'>
         <p>You don't have any favorites yet</p>
         <p>When viewing an item, press the favorite icon favorite_border to add it</p>
       </Block>

@@ -9,7 +9,8 @@ import {
     Searchbar,
     Navbar,
     NavTitle,
-    NavTitleLarge
+    NavTitleLarge,
+    Page
 
 } from 'framework7-react';
 import {
@@ -24,7 +25,7 @@ import {
     Tasty,
     Bacon,
     Diablo
-} from './../assets';
+} from '../assets';
 function Dashboard() {
     return (
         <Block className='mains'>
@@ -219,7 +220,6 @@ function Dashboard() {
                         </Link>
                     </Block>
                 </Block>
-
             </List>
         </Block>
     )

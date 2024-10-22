@@ -1,6 +1,6 @@
 import { Link, Panel, Toolbar } from "framework7-react";
 
-function Sidebar() {
+const Sidebar: React.FC = () => {
   return (
    
       <div className="sidebar">

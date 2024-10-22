@@ -1,7 +1,7 @@
 
 
-import { Page, Tab, Tabs,} from 'framework7-react';
-import { Bottombar, Sidebar } from '../components';
+import { Page, Tab, Tabs, Views} from 'framework7-react';
+import { Bottombar, Panels} from '../components';
 import Dashboard from './dashboard/Dashboard';
 import Favorite from './Favorite';
 import Cart from './Cart';
@@ -12,8 +12,8 @@ const Home = () => {
 
         <Page className="page-home">
             
-           <Sidebar />
-            <Tabs>
+           <Panels />
+           <Tabs>
                 <Tab id="home" className="page-content" tabActive>
                     <Dashboard />
                 </Tab>
