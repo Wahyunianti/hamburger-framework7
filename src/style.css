@@ -55,6 +55,12 @@
 .ripple-wave {
     visibility: hidden;
 }
+.page-content {
+    padding-top: 0;
+}
+.block {
+    padding-inline: 0;
+}
 
 h1, h2, h3, h4, h5 {
     margin: 0;
@@ -67,11 +73,25 @@ h1, h2, h3, h4, h5 {
 .mains{
     overflow-x: hidden !important;
     padding-inline: 0 !important;
+    margin-left: 10px;
+}
+
+.link {
+    font-size: 16px;
+}
+
+.link-active span{
+    color: white;
+}
+
+.link-inactive span{
+    color: black;
 }
 
 .panel-backdrop {
     background-color: transparent;
 }
+
 .panel:not(.panel-in):not(.panel-out):not(.panel-in-breakpoint):not(.panel-in-collapsed):not( .panel-in-swipe ) {
     display: none;
     position: fixed;
@@ -144,6 +164,14 @@ h1, h2, h3, h4, h5 {
     gap: 12px;
     margin: 0;
 }
+.containnns {
+    margin-top: 0;
+}
+
+.containnns .link {
+    padding: 10px;
+}
+
 .demodia{
     width: 350px;
     height: auto;
@@ -159,10 +187,7 @@ h1, h2, h3, h4, h5 {
 .link {
     padding: 5px;
 }
-.link span {
-    color: black;
-    font-size: 16px;
-}
+
 .iconss {
     width: 40px;
 }
@@ -177,7 +202,7 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 210px;
+    width: 200px;
     height: 350px;
     gap: 6px;
     margin: 0;
@@ -216,5 +241,6 @@ h1, h2, h3, h4, h5 {
     .mains{
         margin-left: 100px;
     }
+
 
 }

@@ -10,7 +10,8 @@ import {
     Navbar,
     NavTitle,
     NavTitleLarge,
-    Page
+    Tab,
+    Tabs
 
 } from 'framework7-react';
 import {
@@ -20,24 +21,40 @@ import {
     Bicmac,
     Mix,
     Pepsi,
-    Chocolate,
-    Pie,
-    Tasty,
-    Bacon,
-    Diablo
+    Chocolate
 } from '../assets';
+import { Product } from "../../../data/index";
+import Cards from "../../components/Cards";
+import { useState } from "react";
+
 function Dashboard() {
+    const [ctg, setCategory] = useState('');
+
+    const handleKtgClick = (link: string) => {
+        setCategory(link);
+    };
+
+    const popularNow = [1, 3, 12, 13, 5, 6];
+    const topWeek = [1, 4, 6, 8];
+
+
     return (
         <Block className='mains'>
             <Navbar className='custom-color' large transparent sliding={false}>
                 <NavTitle sliding>Seven Burger</NavTitle>
                 <NavTitleLarge >Seven Burger</NavTitleLarge>
             </Navbar>
+            {/* {input cari} */}
             <Searchbar searchContainer=".search-list" searchIn=".item-title" />
+
+            {/* {handle untuk list notfound} */}
             <List strongIos outlineIos dividersIos className="searchbar-not-found">
                 <ListItem title="Nothing found" />
             </List>
+
             <List strongIos outlineIos dividersIos className="search-list searchbar-found">
+
+                {/* {untuk slide pizza} */}
                 <Block className='containerr'>
                     <Block className='containnn'>
                         <Link>
@@ -54,170 +71,112 @@ function Dashboard() {
                         </Link>
                     </Block>
                 </Block>
+
+                {/* {untuk breadcumbs category} */}
                 <BlockTitle>Categories</BlockTitle>
                 <Block strongIos outlineIos>
                     <Breadcrumbs>
-                        <BreadcrumbsItem>
+                        <BreadcrumbsItem style={{ backgroundColor: ctg === "#burger" ? '#BA1924' : '#F2EEF2' }}>
                             <img className='iconss' src={Bicmac} alt="" />
-                            <Link text="Home" />
+                            <Link
+                                tabLink="#burger"
+                                onClick={() => handleKtgClick("#burger")}
+                                text="Burger"
+                                className={ctg === "#burger" ? 'link-active' : 'link-inactive'}
+                            />
                         </BreadcrumbsItem>
-                        <BreadcrumbsItem>
+                        <BreadcrumbsItem style={{ backgroundColor: ctg === "#pizza" ? '#BA1924' : '#F2EEF2' }}>
                             <img className='iconss' src={Mix} alt="" />
-                            <Link text="Home" />
+                            <Link tabLink="#pizza"
+                                onClick={() => handleKtgClick("#pizza")}
+                                className={ctg === "#pizza" ? 'link-active' : 'link-inactive'}
+                                text="Pizza" />
                         </BreadcrumbsItem>
-                        <BreadcrumbsItem>
+                        <BreadcrumbsItem style={{ backgroundColor: ctg === "#desserts" ? '#BA1924' : '#F2EEF2' }}>
                             <img className='iconss' src={Chocolate} alt="" />
-                            <Link text="Home" />
+                            <Link tabLink="#desserts"
+                                onClick={() => handleKtgClick("#desserts")}
+                                className={ctg === "#desserts" ? 'link-active' : 'link-inactive'}
+                                text="Desserts" />
                         </BreadcrumbsItem>
-                        <BreadcrumbsItem>
+                        <BreadcrumbsItem style={{ backgroundColor: ctg === "#drinks" ? '#BA1924' : '#F2EEF2' }}>
                             <img className='iconss' src={Pepsi} alt="" />
-                            <Link text="Home" />
+                            <Link tabLink="#drinks" text="Drinks"
+                                onClick={() => handleKtgClick("#drinks")}
+                                className={ctg === "#drinks" ? 'link-active' : 'link-inactive'}
+                            />
                         </BreadcrumbsItem>
                     </Breadcrumbs>
-
-                </Block>
-                <BlockTitle>Popular Now</BlockTitle>
-                <Block className='containerr '>
-                    <Block className='containnn productt'>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Diablo} alt="" />
-                                <h3>Diablo</h3>
-                                <h4>Spicy chorizo with hot jalapeno peppers</h4>
-                                <h3 className='prices'><span>$</span>6.50</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Mix} alt="" />
-                                <h3>Mix</h3>
-                                <h4>Bacon, chicken, ham</h4>
-                                <h3 className='prices'><span>$</span>6.59</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Pie} alt="" />
-                                <h3>Apple Pie</h3>
-                                <h4>100% American-grown apples</h4>
-                                <h3 className='prices'><span>$</span>1.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Chocolate} alt="" />
-                                <h3>Chocolate Donut</h3>
-                                <h4>Chocolate and cream filling</h4>
-                                <h3 className='prices'><span>$</span>0.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Tasty} alt="" />
-                                <h3>Big Tasty</h3>
-                                <h4>100% fresh beef burger</h4>
-                                <h3 className='prices'><span>$</span>3.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Bacon} alt="" />
-                                <h3>Big Mac Bacon</h3>
-                                <h4>Classic with bacon</h4>
-                                <h3 className='prices'><span>$</span>2.99</h3>
-                            </Block>
-                        </Link>
-                    </Block>
-                </Block>
-                <BlockTitle>Top of the week</BlockTitle>
-                <Block className='containerr '>
-                    <Block className='containnn productt'>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Diablo} alt="" />
-                                <h3>Diablo</h3>
-                                <h4>Spicy chorizo with hot jalapeno peppers</h4>
-                                <h3 className='prices'><span>$</span>6.50</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Mix} alt="" />
-                                <h3>Mix</h3>
-                                <h4>Bacon, chicken, ham</h4>
-                                <h3 className='prices'><span>$</span>6.59</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Pie} alt="" />
-                                <h3>Apple Pie</h3>
-                                <h4>100% American-grown apples</h4>
-                                <h3 className='prices'><span>$</span>1.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Chocolate} alt="" />
-                                <h3>Chocolate Donut</h3>
-                                <h4>Chocolate and cream filling</h4>
-                                <h3 className='prices'><span>$</span>0.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Tasty} alt="" />
-                                <h3>Big Tasty</h3>
-                                <h4>100% fresh beef burger</h4>
-                                <h3 className='prices'><span>$</span>3.99</h3>
-                            </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Bacon} alt="" />
-                                <h3>Big Mac Bacon</h3>
-                                <h4>Classic with bacon</h4>
-                                <h3 className='prices'><span>$</span>2.99</h3>
-                            </Block>
-                        </Link>
-                    </Block>
                 </Block>
 
-                <BlockTitle>Recently viewed</BlockTitle>
-                <Block className='containerr '>
-                    <Block className='containnn productt'>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Diablo} alt="" />
-                                <h3>Diablo</h3>
-                                <h4>Spicy chorizo with hot jalapeno peppers</h4>
-                                <h3 className='prices'><span>$</span>6.50</h3>
+                {/* {untuk tab category} */}
+                <Block style={{ display: ctg ? 'block' : 'none' }}>
+                    <Tabs>
+                        <Tab id="burger" className="page-content" tabActive>
+                            <Block className='containerrs'>
+                                <Block className='containnns productt'>
+                                    {Product.filter(product => product.category === "burger").map(product => (
+                                        <Cards key={product.id} product={product} />
+                                    ))}
+                                </Block>
                             </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Mix} alt="" />
-                                <h3>Mix</h3>
-                                <h4>Bacon, chicken, ham</h4>
-                                <h3 className='prices'><span>$</span>6.59</h3>
+                        </Tab>
+                        <Tab id="pizza" className="page-content" >
+                            <Block className='containerrs'>
+                                <Block className='containnns productt'>
+                                    {Product.filter(product => product.category === "pizza").map(product => (
+                                        <Cards key={product.id} product={product} />
+                                    ))}
+                                </Block>
                             </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Pie} alt="" />
-                                <h3>Apple Pie</h3>
-                                <h4>100% American-grown apples</h4>
-                                <h3 className='prices'><span>$</span>1.99</h3>
+                        </Tab>
+                        <Tab id="desserts" className="page-content" >
+                            <Block className='containerrs'>
+                                <Block className='containnns productt'>
+                                    {Product.filter(product => product.category === "desserts").map(product => (
+                                        <Cards key={product.id} product={product} />
+                                    ))}
+                                </Block>
                             </Block>
-                        </Link>
-                        <Link>
-                            <Block className='cardsd'>
-                                <img className='cardimg' src={Chocolate} alt="" />
-                                <h3>Chocolate Donut</h3>
-                                <h4>Chocolate and cream filling</h4>
-                                <h3 className='prices'><span>$</span>0.99</h3>
+                        </Tab>
+                        <Tab id="drinks" className="page-content" >
+                            <Block className='containerrs'>
+                                <Block className='containnns productt'>
+                                    {Product.filter(product => product.category === "drinks").map(product => (
+                                        <Cards key={product.id} product={product} />
+                                    ))}
+                                </Block>
                             </Block>
-                        </Link>
+                        </Tab>
+                    </Tabs>
+                </Block>
+
+                {/* {untuk list item} */}
+                <Block style={{ display: ctg ? 'none' : 'block' }}>
+                    <BlockTitle>Popular Now</BlockTitle>
+                    <Block className='containerr '>
+                        <Block className='containnn productt'>
+                            {Product.filter(product => popularNow.includes(product.id)).map(product => (
+                                <Cards key={product.id} product={product} />
+                            ))}
+                        </Block>
+                    </Block>
+                    <BlockTitle>Top of the week</BlockTitle>
+                    <Block className='containerr '>
+                        <Block className='containnn productt'>
+                            {Product.map(product => (
+                                <Cards key={product.id} product={product} />
+                            ))}
+                        </Block>
+                    </Block>
+
+                    <BlockTitle>Recently viewed</BlockTitle>
+                    <Block className='containerr '>
+                        <Block className='containnn productt'>
+                            {Product.map(product => (
+                                <Cards key={product.id} product={product} />
+                            ))}
+                        </Block>
                     </Block>
                 </Block>
             </List>
