@@ -3,6 +3,8 @@ import { App, View} from 'framework7-react';
 import Home from './views/page/Home';
 import Favorite from './views/page/Favorite';
 import Cart from './views/page/Cart';
+import {Produks} from './views/page/detail';
+
 
 
 const AppComponents = () => {
@@ -21,6 +23,10 @@ const AppComponents = () => {
       {
         path: '/cart',
         component: Cart,
+      },
+      {
+        path: '/detail',
+        component: Produks,
       }
     ],
   };

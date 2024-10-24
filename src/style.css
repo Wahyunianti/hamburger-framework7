@@ -55,25 +55,20 @@
 .ripple-wave {
     visibility: hidden;
 }
-.page-content {
-    padding-top: 0;
-}
-.block {
-    padding-inline: 0;
-}
 
 h1, h2, h3, h4, h5 {
     margin: 0;
     width: 100%;
     text-align: center;
 }
-.navbar {
-    top: -85px;
-}
 .mains{
     overflow-x: hidden !important;
     padding-inline: 0 !important;
     margin-left: 10px;
+}
+
+.kontent {
+    padding-top: 0;
 }
 
 .link {
@@ -220,8 +215,18 @@ h1, h2, h3, h4, h5 {
     color: #BA1924;
     margin-right: 5px;
 }
-.productt {
+.containnn {
+    padding-inline: 0;
+}
+
+.productts {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.prodc{
     gap: 10px;
+    padding-inline: 0;
 }
 
 /* bottombar */

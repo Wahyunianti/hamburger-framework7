@@ -27,6 +27,7 @@ import { Product } from "../../../data/index";
 import Cards from "../../components/Cards";
 import { useState } from "react";
 
+
 function Dashboard() {
     const [ctg, setCategory] = useState('');
 
@@ -35,7 +36,8 @@ function Dashboard() {
     };
 
     const popularNow = [1, 3, 12, 13, 5, 6];
-    const topWeek = [1, 4, 6, 8];
+    const topWeek = [3, 4, 17, 14, 10, 11];
+    const reCent = [1, 4, 6, 8];
 
 
     return (
@@ -67,7 +69,6 @@ function Dashboard() {
                         </Link>
                         <Link>
                             <img className='demodia' src={Slide3} alt="" />
-
                         </Link>
                     </Block>
                 </Block>
@@ -110,38 +111,38 @@ function Dashboard() {
                 </Block>
 
                 {/* {untuk tab category} */}
-                <Block style={{ display: ctg ? 'block' : 'none' }}>
+                <Block className='productts' style={{ display: ctg ? 'block' : 'none' }}>
                     <Tabs>
-                        <Tab id="burger" className="page-content" tabActive>
-                            <Block className='containerrs'>
-                                <Block className='containnns productt'>
+                        <Tab id="burger" tabActive>
+                            <Block className='containerrs productts'>
+                                <Block className='containnns prodc'>
                                     {Product.filter(product => product.category === "burger").map(product => (
                                         <Cards key={product.id} product={product} />
                                     ))}
                                 </Block>
                             </Block>
                         </Tab>
-                        <Tab id="pizza" className="page-content" >
-                            <Block className='containerrs'>
-                                <Block className='containnns productt'>
+                        <Tab id="pizza" >
+                            <Block className='containerrs productts'>
+                                <Block className='containnns prodc'>
                                     {Product.filter(product => product.category === "pizza").map(product => (
                                         <Cards key={product.id} product={product} />
                                     ))}
                                 </Block>
                             </Block>
                         </Tab>
-                        <Tab id="desserts" className="page-content" >
-                            <Block className='containerrs'>
-                                <Block className='containnns productt'>
+                        <Tab id="desserts" >
+                            <Block className='containerrs productts'>
+                                <Block className='containnns prodc'>
                                     {Product.filter(product => product.category === "desserts").map(product => (
                                         <Cards key={product.id} product={product} />
                                     ))}
                                 </Block>
                             </Block>
                         </Tab>
-                        <Tab id="drinks" className="page-content" >
-                            <Block className='containerrs'>
-                                <Block className='containnns productt'>
+                        <Tab id="drinks" >
+                            <Block className='containerrs productts'>
+                                <Block className='containnns prodc'>
                                     {Product.filter(product => product.category === "drinks").map(product => (
                                         <Cards key={product.id} product={product} />
                                     ))}
@@ -164,7 +165,7 @@ function Dashboard() {
                     <BlockTitle>Top of the week</BlockTitle>
                     <Block className='containerr '>
                         <Block className='containnn productt'>
-                            {Product.map(product => (
+                            {Product.filter(product => topWeek.includes(product.id)).map(product => (
                                 <Cards key={product.id} product={product} />
                             ))}
                         </Block>
@@ -173,7 +174,7 @@ function Dashboard() {
                     <BlockTitle>Recently viewed</BlockTitle>
                     <Block className='containerr '>
                         <Block className='containnn productt'>
-                            {Product.map(product => (
+                            {Product.filter(product => reCent.includes(product.id)).map(product => (
                                 <Cards key={product.id} product={product} />
                             ))}
                         </Block>

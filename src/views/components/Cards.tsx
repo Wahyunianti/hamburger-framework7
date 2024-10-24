@@ -1,4 +1,4 @@
-import { Link, Block } from "framework7-react";
+import { Link, Block, ListItem } from "framework7-react";
 import React from 'react';
 
 interface CardProps {
@@ -13,7 +13,7 @@ interface CardProps {
 
 const Cards: React.FC<CardProps> = ({ product }) => {
     return (
-        <Link href={`/detail?id=${product.id}`} className="card-link">
+        <Link href="/detail" className="card-link">
             <Block className='cardsd'>
                 <img className='cardimg' src={product.img} alt={product.title} />
                 <h3>{product.title}</h3>

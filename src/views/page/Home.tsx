@@ -5,13 +5,15 @@ import { Bottombar, Panels} from '../components';
 import Dashboard from './dashboard/Dashboard';
 import Favorite from './Favorite';
 import Cart from './Cart';
+import {Produks} from '../page/detail';
+
+
 
 
 const Home = () => {
     return (
 
         <Page className="page-home">
-            
            <Panels />
            <Tabs>
                 <Tab id="home" className="page-content" tabActive>
