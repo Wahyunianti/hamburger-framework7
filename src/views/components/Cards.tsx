@@ -1,4 +1,4 @@
-import { Link, Block, ListItem } from "framework7-react";
+import { Link, Block } from "framework7-react";
 import React from 'react';
 
 interface CardProps {
@@ -12,8 +12,15 @@ interface CardProps {
 }
 
 const Cards: React.FC<CardProps> = ({ product }) => {
+    const queryParams = new URLSearchParams({
+        title: product.title,
+        desc: product.desc,
+        price: product.price.toString(),
+        img: product.img,
+    }).toString();
+
     return (
-        <Link href="/detail" className="card-link">
+        <Link href={`/detail?${queryParams}`} className="card-link">
             <Block className='cardsd'>
                 <img className='cardimg' src={product.img} alt={product.title} />
                 <h3>{product.title}</h3>

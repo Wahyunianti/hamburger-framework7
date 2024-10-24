@@ -40,8 +40,7 @@ const Panels: React.FC = () => {
                 onClick={() => handleLinkClick("#favorite")}
               >
                 <i className="icon material-icons"
-                style={{ color: activeLink === "#favorite" ? 'white' : '#D36A72' }}
-                
+                style={{ color: activeLink === "#favorite" ? 'white' : '#D36A72' }}                
                 >favorite</i>
                 <svg
                   width="9"

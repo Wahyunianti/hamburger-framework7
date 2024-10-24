@@ -63,8 +63,13 @@ h1, h2, h3, h4, h5 {
 }
 .mains{
     overflow-x: hidden !important;
-    padding-inline: 0 !important;
-    margin-left: 10px;
+    margin-inline: 2px;
+}
+
+p i {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
 }
 
 .kontent {
@@ -233,6 +238,7 @@ h1, h2, h3, h4, h5 {
 .toolbar.tabbar.toolbar-bottom{
     position: fixed;
     bottom: 0;
+    z-index: 5000;
 }
 
 @media only screen and (min-width :  768px) {
@@ -243,9 +249,8 @@ h1, h2, h3, h4, h5 {
     .panel:not(.panel-in):not(.panel-out):not(.panel-in-breakpoint):not(.panel-in-collapsed):not( .panel-in-swipe ) {
         display: flex;
     }
-    .mains{
+    .mains {
         margin-left: 100px;
     }
-
 
 }

@@ -42,10 +42,9 @@ function Dashboard() {
 
     return (
         <Block className='mains'>
-            <Navbar className='custom-color' large transparent sliding={false}>
-                <NavTitle sliding>Seven Burger</NavTitle>
-                <NavTitleLarge >Seven Burger</NavTitleLarge>
-            </Navbar>
+
+            <NavTitleLarge >Seven Burger</NavTitleLarge>
+
             {/* {input cari} */}
             <Searchbar searchContainer=".search-list" searchIn=".item-title" />
 
@@ -74,8 +73,8 @@ function Dashboard() {
                 </Block>
 
                 {/* {untuk breadcumbs category} */}
-                <BlockTitle>Categories</BlockTitle>
-                <Block strongIos outlineIos>
+                <BlockTitle style={{marginLeft: "0"}}>Categories</BlockTitle>
+                <Block strongIos outlineIos className='productts'>
                     <Breadcrumbs>
                         <BreadcrumbsItem style={{ backgroundColor: ctg === "#burger" ? '#BA1924' : '#F2EEF2' }}>
                             <img className='iconss' src={Bicmac} alt="" />
@@ -153,8 +152,8 @@ function Dashboard() {
                 </Block>
 
                 {/* {untuk list item} */}
-                <Block style={{ display: ctg ? 'none' : 'block' }}>
-                    <BlockTitle>Popular Now</BlockTitle>
+                <Block className='productts' style={{ display: ctg ? 'none' : 'block' }}>
+                    <BlockTitle style={{marginLeft: "0"}}>Popular Now</BlockTitle>
                     <Block className='containerr '>
                         <Block className='containnn productt'>
                             {Product.filter(product => popularNow.includes(product.id)).map(product => (
@@ -162,7 +161,7 @@ function Dashboard() {
                             ))}
                         </Block>
                     </Block>
-                    <BlockTitle>Top of the week</BlockTitle>
+                    <BlockTitle style={{marginLeft: "0"}}>Top of the week</BlockTitle>
                     <Block className='containerr '>
                         <Block className='containnn productt'>
                             {Product.filter(product => topWeek.includes(product.id)).map(product => (
@@ -171,7 +170,7 @@ function Dashboard() {
                         </Block>
                     </Block>
 
-                    <BlockTitle>Recently viewed</BlockTitle>
+                    <BlockTitle style={{marginLeft: "0"}}>Recently viewed</BlockTitle>
                     <Block className='containerr '>
                         <Block className='containnn productt'>
                             {Product.filter(product => reCent.includes(product.id)).map(product => (

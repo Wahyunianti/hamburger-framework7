@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, Navbar, BlockTitle, Block } from 'framework7-react';
+import { useLocation } from 'react-router-dom';
 
 const Produks: React.FC = () => {
     return (
